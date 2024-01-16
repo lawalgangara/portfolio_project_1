@@ -1,14 +1,8 @@
-from flask import Flask
-from config import Config
+# __init__.py
 
-def create_app():
-    app = Flask(__name__)
-    app.config.from_object(Config)
-    return app
+from app.create_app import create_app
 
 app = create_app()
 
+# Import routes or other components here if needed
 from app.routes.root import *
-
-if __name__ == '__main__':
-    app.run()
